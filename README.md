@@ -24,7 +24,7 @@ data = data.groupby('Date')['Total Volume'].sum().to_frame()
 
 resampled_data = data.resample('Y').sum()
 resampled_data.index = resampled_data.index.year
-
+ 
 resampled_data.reset_index(inplace=True)
 resampled_data.rename(columns={'Date': 'Year', 'Total Volume': 'TotalVolume'}, inplace=True)
 
